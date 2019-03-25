@@ -44,8 +44,7 @@ SUPPORT_ALEXA = (SUPPORT_PAUSE | SUPPORT_PREVIOUS_TRACK |
                  SUPPORT_NEXT_TRACK | SUPPORT_STOP |
                  SUPPORT_VOLUME_SET | SUPPORT_PLAY |
                  SUPPORT_PLAY_MEDIA | SUPPORT_TURN_OFF | SUPPORT_TURN_ON |
-                 SUPPORT_VOLUME_MUTE | SUPPORT_PAUSE |
-                 SUPPORT_SELECT_SOURCE)
+                 SUPPORT_VOLUME_MUTE | SUPPORT_PAUSE)
 _LOGGER = logging.getLogger(__name__)
 
 DEPENDENCIES = [ALEXA_DOMAIN]
@@ -518,6 +517,11 @@ class AlexaClient(MediaPlayerDevice):
     @property
     def supported_features(self):
         """Flag media player features that are supported."""
+        if (self._bluetooth_state['pairedDeviceList'] and
+            any(bt_device
+                for bt_device in self._bluetooth_state['pairedDeviceList']
+                if 'A2DP-SINK' in bt_device['profiles'])):
+            return SUPPORT_ALEXA | SUPPORT_SELECT_SOURCE
         return SUPPORT_ALEXA
 
     def set_volume_level(self, volume):
