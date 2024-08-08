@@ -1,7 +1,7 @@
-![GitHub all releases](https://img.shields.io/github/downloads/alandtse/alexa_media_player/total)
-![GitHub release (latest by SemVer)](https://img.shields.io/github/downloads/alandtse/alexa_media_player/latest/total)
+![GitHub all releases](https://img.shields.io/github/downloads/caphm/alexa_media_player/total)
+![GitHub release (latest by SemVer)](https://img.shields.io/github/downloads/caphm/alexa_media_player/latest/total)
 
-[Alexa Media Player Custom Component](https://github.com/alandtse/alexa_media_player) for homeassistant
+[Fork of Alexa Media Player Custom Component](https://github.com/caphm/alexa_media_player) for homeassistant
 
 This is a custom component to allow control of Amazon Alexa devices in [Homeassistant](https://home-assistant.io) using the unofficial Alexa API. Please note this mimics the Alexa app but Amazon may cut off access at anytime.
 
